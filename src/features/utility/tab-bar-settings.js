@@ -3,13 +3,13 @@ import { Feather } from "@expo/vector-icons";
 
 //NOTE : ONLY WORKS FOR FEATHER ICONS !!!
 
-const navigation = {
+const TAB_NAVIGATION = {
   Home: "home",
   About: "book-open",
   Contact: "mail",
 };
 
-const navigationIcons = (icons, currentRoute, color) => {
+const navigationIcon = (icons, currentRoute, color) => {
   let listRoutes = Object.keys(icons);
   let listIcons = Object.values(icons);
 
@@ -23,4 +23,8 @@ const navigationIcons = (icons, currentRoute, color) => {
   return <Feather name={iconName} size={24} color={color} />;
 };
 
-export { navigation, navigationIcons };
+const tabSettings = ({ route }) => ({
+  tabBarIcon: ({ color }) => navigationIcon(TAB_NAVIGATION, route, color),
+});
+
+export default tabSettings;
