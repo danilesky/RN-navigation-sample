@@ -18,7 +18,8 @@ export default function App() {
       <NavigationContainer>
         <Tab.Navigator
           screenOptions={({ route }) => ({
-            tabBarIcon: () => navigationIcons(navigation, route),
+            tabBarIcon: ({ color }) =>
+              navigationIcons(navigation, route, color),
           })}
         >
           <Tab.Screen name="Home" component={Home} />

@@ -9,7 +9,7 @@ const navigation = {
   Contact: "mail",
 };
 
-const navigationIcons = (icons, currentRoute) => {
+const navigationIcons = (icons, currentRoute, color) => {
   let listRoutes = Object.keys(icons);
   let listIcons = Object.values(icons);
 
@@ -20,7 +20,7 @@ const navigationIcons = (icons, currentRoute) => {
     }
   });
 
-  return <Feather name={iconName} size={24} color="black" />;
+  return <Feather name={iconName} size={24} color={color} />;
 };
 
 export { navigation, navigationIcons };
