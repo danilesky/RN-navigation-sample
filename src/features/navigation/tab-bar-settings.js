@@ -1,6 +1,7 @@
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native";
+import { AddButton } from "../components/addbutton/AddButton.component";
 
 //NOTE : ONLY WORKS FOR FEATHER ICONS !!!
 
@@ -29,7 +30,7 @@ const navigationIcon = (icons, currentRoute, color) => {
 const tabSettings = ({ route }) => ({
   tabBarIcon: ({ color }) => navigationIcon(TAB_NAVIGATION, route, color),
   tabBarButton: (props) =>
-    route.name === "Add" ? "" : <TouchableOpacity {...props} />,
+    route.name === "Add" ? <AddButton /> : <TouchableOpacity {...props} />,
 });
 
 export default tabSettings;
